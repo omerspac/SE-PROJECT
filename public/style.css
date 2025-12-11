@@ -1,0 +1,43 @@
+/* DEBUG: Uncomment the next line to test if the file is loading (it will turn the background red) */
+/* body { background-color: red !important; } */
+
+/* FORCE BLUE ACCENT PALETTE */
+:root {
+    --primary-main: #3b82f6 !important; /* Blue 500 */
+    --primary-dark: #1d4ed8 !important; /* Blue 700 */
+    --primary-light: #eff6ff !important; /* Blue 50 */
+}
+
+/* 1. Target the Header */
+header {
+    background-color: #3b82f6 !important; /* Blue Header */
+}
+
+/* 2. Target the "New Chat" and Submit Buttons */
+button.MuiButton-containedPrimary {
+    background-color: #3b82f6 !important;
+}
+button.MuiButton-containedPrimary:hover {
+    background-color: #1d4ed8 !important;
+}
+
+/* 3. Target User Message Bubbles */
+.user-message, 
+div[data-message-role="user"] { 
+    background-color: #eff6ff !important;
+    color: #000 !important;
+    border: 1px solid #bfdbfe !important;
+}
+
+/* 4. Target Links */
+a {
+    color: #3b82f6 !important;
+}
+
+/* Dark Mode Overrides */
+.dark .user-message, 
+.dark div[data-message-role="user"] {
+    background-color: #1e3a8a !important; /* Dark Blue */
+    color: #fff !important;
+    border: 1px solid #1e40af !important;
+}
