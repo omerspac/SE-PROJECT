@@ -15,11 +15,11 @@ if not gemini_api_key:
 
 external_client = AsyncOpenAI(
     api_key=gemini_api_key,
-    base_url="https://generativelanguage.googleapis.com/v1beta/openai/",
+    base_url="https://openrouter.ai/api/v1",
 )
 
 model_gemini = OpenAIChatCompletionsModel(
-    model="gemini-2.5-flash",
+    model="xiaomi/mimo-v2-flash:free",
     openai_client=external_client
 )
 
