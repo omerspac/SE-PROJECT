@@ -1,6 +1,6 @@
 import chainlit as cl
 import asyncio
-from main import triage_agent, config, conversation_history
+from main import pakistan_university_advisor_agent, config, conversation_history
 from agents import Runner
 
 
@@ -9,7 +9,8 @@ async def start_chat():
     await cl.Message(
         content=(
             "🎓 **AI University FAQ Bot**\n"
-            "💡 Ask about NED, MAJU, FAST, NUST, IBA, LUMS, Bahria, PIEAS.\n"
+            "-> Created for Software Engineering Project\n"
+            "-> 💡 Ask me about any Pakistani University or directions!\n"
         )
     ).send()
 
@@ -18,10 +19,10 @@ async def start_chat():
 async def handle_message(message: cl.Message):
     user_input = message.content.strip()
 
-    # Add user message to chat history
+    # Adding user message to chat history
     conversation_history.append({"role": "user", "content": user_input})
 
-    # Build combined prompt
+    # Building combined prompt
     combined_prompt = "\n".join(
         f"{msg['role'].capitalize()}: {msg['content']}"
         for msg in conversation_history
@@ -29,14 +30,14 @@ async def handle_message(message: cl.Message):
 
     try:
         result = await Runner.run(
-            triage_agent,
+            pakistan_university_advisor_agent,
             combined_prompt,
             run_config=config
         )
 
         bot_reply = result.final_output
 
-        # Save assistant message
+        # Saving assistant message
         conversation_history.append({"role": "assistant", "content": bot_reply})
 
         await cl.Message(content=bot_reply).send()
