@@ -57,6 +57,17 @@ The application avoids giving exact admission dates or test details and instead 
 
 ---
 
+## 📂 Folder Structure
+```
+SE-PROJECT/
+├─ main.py                  # Main bot loop
+├─ agents/                  # AI agent and model setup
+├─ public/                  # Frontend assets (logo, favicon, CSS)
+├─ requirements.txt         # Python dependencies
+├─ .env                     # API keys and environment variables
+└─ README.md                # Project documentation
+```
+
 ## 🧩 System Design (High Level)
 - Single intelligent advisor agent
 - Context engineering used to control tone, behavior, and scope
