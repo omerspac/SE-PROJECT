@@ -90,8 +90,8 @@ name = "University FAQ Bot"
 custom_css = "/public/style.css"
 
 
-theme_light = "/public/logo.png"
-theme_dark = "/public/logo.png"
+theme_light = "/public/favicon.png"
+theme_dark = "/public/favicon.png"
 
 
 # default_theme = "dark"
@@ -144,7 +144,7 @@ alert_style = "classic"
 logo_file_url = ""
 
 # Load assistant avatar image directly from URL.
-default_avatar_file_url = "/public/logo.png"
+default_avatar_file_url = "/public/favicon.png"
 
 # Specify a custom build directory for the frontend.
 # This can be used to customize the frontend code.
